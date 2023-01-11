@@ -1,4 +1,4 @@
-# NotOS-Real
+# Not OS
 
 A simple system using asm &amp; c++
 
