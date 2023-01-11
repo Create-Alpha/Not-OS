@@ -1,0 +1,16 @@
+Not-OS
+(https://github.com/kklsuid/Not-OS)
+© 2023 Create Alpha Technology Co., Ltd.
+Licensed under the MIT license.
+
+** v0.1.7 **
+Tips: I'm not a native English speaker, so these logs may translated by machine.
+
+- Fixed printHex's bug.
+    before: KEYBOARD 0x01D0123456789ABCDEF
+    after:  KEYBOARD 0x1D
+- Fixed some little bug.
+- Moved Mouse's display code to kernel.cpp.
+- Moved Keyboard's display code to kernel.cpp.
+- Added "KeyboardEventHandler" and "MouseEventHandler".
+- Refactoring code to increase stability.

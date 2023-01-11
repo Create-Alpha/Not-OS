@@ -4,14 +4,14 @@ A simple system using asm &amp; c++
 ## How to install (VirtualBox)
 First, install VirtualBox.
 
-Create a new virtual machine, change its type to Other/Other.
+Create a new virtual machine, change its type to Other/Unknown.
 
 Then rename it to "NotOS".
 
 ## How to build
-Need: Linux with g++, make, binutils, and xorriso.
+Need: Linux with g++, make, binutils, grub2, and xorriso.
 
-Enter this to install them: `sudo apt-get install g++ make binutils xorriso`
+Enter this to install them: `sudo apt-get install g++ make binutils xorriso grub2-common`
 
 Clone project: `git clone git@github.com:kklsuid/NotOS-Real.git`
 
