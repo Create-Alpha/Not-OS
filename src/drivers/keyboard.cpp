@@ -1,5 +1,9 @@
 
-#include "keyboard.h"
+#include <drivers/keyboard.h>
+
+using namespace NotOS::common;
+using namespace NotOS::drivers;
+using namespace NotOS::hardwarecommunication;
 
 KeyboardEventHandler::KeyboardEventHandler()
 {
@@ -18,7 +22,7 @@ void KeyboardEventHandler::OnKeyUp(char)
 
 
 KeyboardDriver::KeyboardDriver(InterruptManager* manager, KeyboardEventHandler *handler)
-: InterruptHandler(0x21, manager),
+: InterruptHandler(manager, 0x21),
 dataport(0x60),
 commandport(0x64)
 {

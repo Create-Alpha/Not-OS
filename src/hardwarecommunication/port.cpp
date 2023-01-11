@@ -1,6 +1,7 @@
 
-#include "port.h"
-
+#include <hardwarecommunication/port.h>
+using namespace NotOS::common;
+using namespace NotOS::hardwarecommunication;
 
 Port::Port(uint16_t portnumber)
 {

@@ -1,6 +1,7 @@
 
-#include "driver.h"
-
+#include <drivers/driver.h>
+//using namespace NotOS::common;
+using namespace NotOS::drivers;
 
 Driver::Driver()
 {

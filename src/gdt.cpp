@@ -1,6 +1,7 @@
 
-#include "gdt.h"
-
+#include <gdt.h>
+using namespace NotOS;
+using namespace NotOS::common;
 
 GlobalDescriptorTable::GlobalDescriptorTable()
     : nullSegmentSelector(0, 0, 0),

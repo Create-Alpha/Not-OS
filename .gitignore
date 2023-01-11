@@ -35,3 +35,4 @@
 *.bin
 *.o
 *.kate-swp
+obj/
