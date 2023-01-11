@@ -14,11 +14,11 @@ objects = obj/loader.o \
 	  obj/drivers/mouse.o \
 	  obj/kernel.o
 
-obj/%.o : src/%.cpp
+obj/%.o : %.cpp
 	mkdir -p $(@D)
 	g++ $(GPPPARAMS) -c -o $@ $<
 
-obj/%.o: src/%.s
+obj/%.o: %.s
 	mkdir -p $(@D)
 	as $(ASPARAMS) -o $@ $<
 

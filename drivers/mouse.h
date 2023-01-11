@@ -2,10 +2,10 @@
 #ifndef __NOTOS__DRIVERS__MOUSE_H
 #define __NOTOS__DRIVERS__MOUSE_H
 
-#include <common/types.h>
-#include <drivers/driver.h>
-#include <hardwarecommunication/interrupts.h>
-#include <hardwarecommunication/port.h>
+#include "../common/types.h"
+#include "driver.h"
+#include "../hardwarecommunication/interrupts.h"
+#include "../hardwarecommunication/port.h"
 
 namespace NotOS
 {

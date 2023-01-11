@@ -1,11 +1,11 @@
 
-#include <common/types.h>
-#include <gdt.h>
-#include <hardwarecommunication/interrupts.h>
-#include <hardwarecommunication/pci.h>
-#include <drivers/driver.h>
-#include <drivers/keyboard.h>
-#include <drivers/mouse.h>
+#include "common/types.h"
+#include "gdt.h"
+#include "hardwarecommunication/interrupts.h"
+#include "hardwarecommunication/pci.h"
+#include "drivers/driver.h"
+#include "drivers/keyboard.h"
+#include "drivers/mouse.h"
 
 using namespace NotOS;
 using namespace NotOS::common;
@@ -129,6 +129,7 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
     GlobalDescriptorTable gdt;
     InterruptManager interrupts(0x20, &gdt);
 
+    
     printf("Initializing Hardware, Stage 1\n");
 
     DriverManager drvManager;  // Setting up drivers

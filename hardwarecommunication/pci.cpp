@@ -1,4 +1,4 @@
-#include <hardwarecommunication/pci.h>
+#include "pci.h"
 using namespace NotOS::common;
 using namespace NotOS::drivers;
 using namespace NotOS::hardwarecommunication;

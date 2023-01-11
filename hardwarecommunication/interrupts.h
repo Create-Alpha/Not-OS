@@ -2,9 +2,9 @@
 #ifndef __NOTOS__HARDWARECOMMUNICATION__INTERRUPTMANAGER_H
 #define __NOTOS__HARDWARECOMMUNICATION__INTERRUPTMANAGER_H
 
-#include <gdt.h>
-#include <common/types.h>
-#include <hardwarecommunication/port.h>
+#include "../gdt.h"
+#include "../common/types.h"
+#include "port.h"
 
 namespace NotOS {
     namespace hardwarecommunication {

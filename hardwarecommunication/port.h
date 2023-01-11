@@ -2,7 +2,7 @@
 #ifndef __NOTOS__HARDWARECOMMUNICATION__PORT_H
 #define __NOTOS__HARDWARECOMMUNICATION__PORT_H
 
-#include <common/types.h>
+#include "../common/types.h"
 
 namespace NotOS {
     namespace hardwarecommunication {

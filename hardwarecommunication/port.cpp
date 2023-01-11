@@ -1,5 +1,5 @@
 
-#include <hardwarecommunication/port.h>
+#include "port.h"
 using namespace NotOS::common;
 using namespace NotOS::hardwarecommunication;
 
@@ -98,7 +98,4 @@ uint32_t Port32Bit::Read()
 {
     return Read32(portnumber);
 }
-
-
-
 

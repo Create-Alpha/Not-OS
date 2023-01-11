@@ -1,5 +1,5 @@
 
-#include <drivers/mouse.h>
+#include "mouse.h"
 
 using namespace NotOS::common;
 using namespace NotOS::drivers;

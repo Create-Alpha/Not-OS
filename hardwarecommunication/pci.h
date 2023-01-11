@@ -1,11 +1,10 @@
 #ifndef __NOTOS__HARDWARECOMMUNICATION__PCI_H
 #define __NOTOS__HARDWARECOMMUNICATION__PCI_H
 
-#include <hardwarecommunication/port.h>
-#include <common/types.h>
-#include <drivers/driver.h>
-#include <hardwarecommunication/interrupts.h>
-
+#include "port.h"
+#include "../common/types.h"
+#include "../drivers/driver.h"
+#include "interrupts.h"
 
 
 namespace NotOS

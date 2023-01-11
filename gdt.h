@@ -1,7 +1,7 @@
 #ifndef __NOTOS__GDT_H
 #define __NOTOS__GDT_H
 
-#include <common/types.h>
+#include "common/types.h"
 
 namespace NotOS {
 

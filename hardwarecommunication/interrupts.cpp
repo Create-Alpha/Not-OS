@@ -1,5 +1,5 @@
 
-#include <hardwarecommunication/interrupts.h>
+#include "interrupts.h"
 using namespace NotOS::common;
 using namespace NotOS::hardwarecommunication;
 
