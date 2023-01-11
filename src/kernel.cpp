@@ -128,7 +128,7 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
     GlobalDescriptorTable gdt;
     InterruptManager interrupts(0x20, &gdt);
 
-    printf("Initalizing Hardware, Stage 1");
+    printf("Initializing Hardware, Stage 1");
 
     DriverManager drvManager;  // Setting up drivers
 

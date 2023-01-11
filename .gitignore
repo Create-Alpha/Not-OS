@@ -35,4 +35,6 @@
 *.bin
 *.o
 *.kate-swp
+*.clangd
 obj/
+iso/
