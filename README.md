@@ -13,7 +13,7 @@ Then rename it to **"NotOS"**. Set the **dvd storage** to the .iso file.
 Run it. If it works, you may see something like these:
 
 ```
-NotOS v0.7.0b
+NotOS v0.7.0-alpha
 Hello, World!   From NoFun
 __________________________
 (c) 2023 Create Alpha Tech
