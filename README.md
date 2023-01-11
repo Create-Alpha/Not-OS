@@ -2,22 +2,35 @@
 A simple system using asm &amp; c++
 
 ## How to install (VirtualBox)
-First, install VirtualBox.
+First, install **VirtualBox**.
 
-Create a new virtual machine, change its type to Other/Unknown.
+Next, get **.iso file** (Releases or build yourself)
 
-Then rename it to "NotOS".
+Create a new virtual machine in vbox, change its type to **Other/Unknown**.
+
+Then rename it to **"NotOS"**. Set the **dvd storage** to the .iso file.
+
+Run it. If it works, you may see something like these:
+
+```
+NotOS v0.1.7b
+Hello, World!   From NoFun
+__________________________
+(c) 2023 Create Alpha Tech
+   
+Initalizing Hardware, Stage 1.. 2.. 3
+```
 
 ## How to build
-Need: Linux with g++, make, binutils, grub2, and xorriso.
+Need: **Linux with git, g++, make, binutils, grub2, and xorriso**.
 
-Enter this to install them: `sudo apt-get install g++ make binutils xorriso grub2-common`
+Enter this to install them: `sudo apt-get install g++ make binutils xorriso grub2-common git`
 
-Clone project: `git clone git@github.com:kklsuid/NotOS-Real.git`
+Then clone project: `git clone git@github.com:kklsuid/NotOS-Real.git`
 
 If you're ready, change to project's dir, and enter this to build a .iso file.
 
-`make build`
+`make mykernel.iso`
 
 Or you want a .bin file, enter
 
