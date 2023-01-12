@@ -6,6 +6,12 @@
 
 Licensed under the MIT license.
 
+
+## v0.8.2-alpha
+
+- Added BaseAddressRegister to pci
+- Fixed break problem at pci
+
 ## v0.8.1-alpha
 
 - Added PCI Device driver.
