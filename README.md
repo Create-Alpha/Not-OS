@@ -33,7 +33,7 @@ Initializing Hardware, Stage 1.. 2.. 3
 
 Need: **Linux with git, g++, make, binutils, grub2, and xorriso**.
 
-Enter this to install them: `sudo apt-get install g++ make binutils xorriso grub2-common git`
+Enter this to install them: `sudo apt-get install g++ make binutils xorriso grub2 grub2-common git`
 
 Then clone project: `git clone git@github.com:kklsuid/NotOS-Real.git`
 

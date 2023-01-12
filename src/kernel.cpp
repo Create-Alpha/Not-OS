@@ -121,7 +121,7 @@ extern "C" void callConstructors()
 // Main of all the system.
 extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot_magic*/)
 {
-    printf("NotOS v0.8.0-alpha\n");
+    printf("NotOS v0.8.2-alpha\n");
     printf("Hello, World!   From NoFun\n");
     printf("__________________________\n");
     printf("(c) 2023 Create Alpha Tech\n\n");
@@ -142,7 +142,7 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
         drvManager.AddDriver(&mouse);
 
         PCIController PCIC;
-        PCIC.SelectDrivers(&drvManager);
+        PCIC.SelectDrivers(&drvManager, &interrupts);
 
         printf("Initializing Hardware, Stage 2\n");
 
