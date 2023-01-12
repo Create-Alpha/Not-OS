@@ -2,9 +2,9 @@
 
 [![Last updated](https://img.shields.io/badge/dynamic/json?color=red&label=Last%20Updated&query=updated_at&url=https%3A%2F%2Fapi.github.com%2Frepos%2FCreate-Alpha%2FNot-OS)](https://github.com/Create-Alpha/Not-OS/releases/latest)
 
-![LOGO](https://github.com/Create-Alpha/Our-Icons/blob/main/NotOS-Poster.png)
+![LOGO](https://github.com/Create-Alpha/Our-Icons/raw/main/NotOS-Poster.png)
 
-A simple system using asm &amp; c++
+<p align="center">A simple system using asm &amp; c++</p>
 
 ## How to install (VirtualBox)
 
@@ -27,6 +27,8 @@ __________________________
 Initializing Hardware, Stage 1.. 2.. 3
 ```
 
+<p align="center">Tip: Maybe will change in latest version/p>
+
 ## How to build
 
 Need: **Linux with git, g++, make, binutils, grub2, and xorriso**.
@@ -42,3 +44,5 @@ If you're ready, change to project's dir, and enter this to build a .iso file.
 Or you want a .bin file, enter
 
 `make mykernel.bin`
+
+If build failed, try again, find the wrong. If build is always failed, report as a issue.
