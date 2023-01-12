@@ -2,6 +2,8 @@
 
 [![Last updated](https://img.shields.io/badge/dynamic/json?color=red&label=Last%20Updated&query=updated_at&url=https%3A%2F%2Fapi.github.com%2Frepos%2FCreate-Alpha%2FNot-OS)](https://github.com/Create-Alpha/Not-OS/releases/latest)
 
+![lJlCX.png](https://i.328888.xyz/2023/01/12/lJlCX.png)
+
 A simple system using asm &amp; c++
 
 ## How to install (VirtualBox)
