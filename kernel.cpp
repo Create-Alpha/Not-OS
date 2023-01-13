@@ -6,6 +6,7 @@
 #include "drivers/driver.h"
 #include "drivers/keyboard.h"
 #include "drivers/mouse.h"
+#include "drivers/vga.h"
 
 using namespace NotOS;
 using namespace NotOS::common;
@@ -121,7 +122,7 @@ extern "C" void callConstructors()
 // Main of all the system.
 extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot_magic*/)
 {
-    printf("NotOS v0.8.2-alpha\n");
+    printf("NotOS v0.8.3-alpha\n");
     printf("Hello, World!   From NoFun\n");
     printf("__________________________\n");
     printf("(c) 2023 Create Alpha Tech\n\n");
@@ -145,12 +146,19 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
         PCIController PCIC;
         PCIC.SelectDrivers(&drvManager, &interrupts);
 
+        VideoGraphicsArray vga;
+
         printf("Initializing Hardware, Stage 2\n");
 
         drvManager.ActivateAll();
 
     printf("Initializing Hardware, Stage 3\n");
     interrupts.Activate();
+
+    vga.SetMode(320, 200, 8);
+    for(int32_t y = 0; y < 200; y++)
+        for(int32_t x = 0; x < 320; x++)
+            vga.PutPixel(x,y,0x00, 0x00, 0xA8);
 
     while(1);
 }

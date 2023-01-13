@@ -6,6 +6,13 @@
 
 Licensed under the MIT license.
 
+## v0.8.3-alpha
+
+Guess what?
+
+- Added VideoGraphicsArray!
+  - Only supported 320x200 & 8 Bit color depth.
+  - Now, you will see a blue screen. Don't worry, it isn't error.
 
 ## v0.8.2-alpha
 
