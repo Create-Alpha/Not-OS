@@ -6,6 +6,14 @@
 
 Licensed under the MIT license.
 
+## v0.9.0-alpha
+
+- Added Basic GUI Framework (seems weird)
+  - Uncomment the `#define GRAPHICSMODE` to use
+- Added Multitasking
+
+WARNING: THIS VERSION IS ONLY FOR TEST.
+
 ## v0.8.3-alpha
 
 Guess what?

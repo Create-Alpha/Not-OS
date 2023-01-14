@@ -7,11 +7,17 @@
 #include <drivers/keyboard.h>
 #include <drivers/mouse.h>
 #include <drivers/vga.h>
+#include <gui/desktop.h>
+#include <gui/window.h>
+#include <multitasking.h>
 
 using namespace NotOS;
 using namespace NotOS::common;
 using namespace NotOS::drivers;
 using namespace NotOS::hardwarecommunication;
+using namespace NotOS::gui;
+
+//#define GRAPHICSMODE
 
 void printf(char* str)
 {
@@ -109,6 +115,20 @@ public:
     }
 };
 
+void taskA()
+{
+    while (true)
+        printf("A");
+}
+
+void taskB()
+{
+    while (true)
+        printf("B");
+}
+
+
+
 typedef void (*constructor)();
 extern "C" constructor start_ctors;
 extern "C" constructor end_ctors;
@@ -128,18 +148,37 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
     printf("(c) 2023 Create Alpha Tech\n\n");
 
     GlobalDescriptorTable gdt;
-    InterruptManager interrupts(0x20, &gdt);
 
+    TaskManager taskManager;
+    Task task1(&gdt, taskA);
+    Task task2(&gdt, taskB);
+    taskManager.AddTask(&task1);
+    taskManager.AddTask(&task2);
+
+    InterruptManager interrupts(0x20, &gdt, &taskManager);
+
+    
     printf("Initializing Hardware, Stage 1\n");
+    #ifdef GRAPHICSMODE
+    Desktop desktop(320,200, 0x00,0x00,0xA8);
+    #endif
 
     DriverManager drvManager;  // Setting up drivers
 
-        PrintfKeyboardEventHandler kbhandler;
-        KeyboardDriver keyboard(&interrupts, &kbhandler);
+        #ifdef GRAPHICSMODE
+            KeyboardDriver keyboard(&interrupts, &desktop);
+        #else
+            PrintfKeyboardEventHandler kbhandler;
+            KeyboardDriver keyboard(&interrupts, &kbhandler);
+        #endif
         drvManager.AddDriver(&keyboard);
 
-        MouseToConsole mousehandler;
-        MouseDriver mouse(&interrupts, &mousehandler);
+        #ifdef GRAPHICSMODE
+            MouseDriver mouse(&interrupts, &desktop);
+        #else
+            MouseToConsole mousehandler;
+            MouseDriver mouse(&interrupts, &mousehandler);
+        #endif
         drvManager.AddDriver(&mouse);
 
         PCIController PCIC;
@@ -147,17 +186,28 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot
 
         VideoGraphicsArray vga;
 
-        printf("Initializing Hardware, Stage 2\n");
+    printf("Initializing Hardware, Stage 2\n");
 
         drvManager.ActivateAll();
 
     printf("Initializing Hardware, Stage 3\n");
+
+    #ifdef GRAPHICSMODE
+        vga.SetMode(320, 200, 8);
+        Window win1(&desktop, 10,10, 20,20, 0xA8,0x00,0x00);
+        desktop.AddChild(&win1);
+        Window win2(&desktop, 40,15, 30,30, 0x00,0xA8,0x00);
+        desktop.AddChild(&win2);
+    #endif
+    
     interrupts.Activate();
+    //vga.FillRectangle(0, 0, 320, 200, 0x00, 0x00, 0xA8);
 
-    vga.SetMode(320, 200, 8);
-    for(int32_t y = 0; y < 200; y++)
-        for(int32_t x = 0; x < 320; x++)
-            vga.PutPixel(x,y,0x00, 0x00, 0xA8);
-
-    while(1);
+    while(1)
+    {
+        #ifdef GRAPHICSMODE
+            desktop.Draw(&vga);
+            //FIXME: Not a good idea to place here.
+        #endif
+    }
 }
