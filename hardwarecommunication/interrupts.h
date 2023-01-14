@@ -3,6 +3,7 @@
 #define __NOTOS__HARDWARECOMMUNICATION__INTERRUPTMANAGER_H
 
 #include "../gdt.h"
+#include "../multitasking.h"
 #include "../common/types.h"
 #include "port.h"
 
@@ -29,6 +30,7 @@ namespace NotOS {
 
                 static InterruptManager* ActiveInterruptManager;
                 InterruptHandler* handlers[256];
+                TaskManager *taskManager;
 
                 struct GateDescriptor
                 {
@@ -107,7 +109,7 @@ namespace NotOS {
                 Port8BitSlow programmableInterruptControllerSlaveDataPort;
 
             public:
-                InterruptManager(NotOS::common::uint16_t hardwareInterruptOffset, NotOS::GlobalDescriptorTable* globalDescriptorTable);
+                InterruptManager(NotOS::common::uint16_t hardwareInterruptOffset, NotOS::GlobalDescriptorTable* globalDescriptorTable, NotOS::TaskManager* taskManager);
                 ~InterruptManager();
                 NotOS::common::uint16_t HardwareInterruptOffset();
                 void Activate();
