@@ -6,6 +6,11 @@
 
 Licensed under the MIT license.
 
+## v0.9.1-alpha
+
+- Added Dynamic Memory Management / Heap
+- Fixed some little error
+
 ## v0.9.0-alpha
 
 - Added Basic GUI Framework (seems weird)
